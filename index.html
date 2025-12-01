@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dqv3 K0nohaQくんアーカイブ</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>
+    dqv3 K0nohaQくんアーカイブ
+  </h1>
+  <div class="flex-col">
+    <div style="text-align: start;">
+      <h1>dq3v</h1>
+      <h2>説明</h2>
+      <br>
+      You got rage baited lol
+      <br>
+      社不です
+      <br>
+      チャンネル登録してね L🎭
+      <br>
+      Twitter：dcで公開
+      <br>
+      Discord：dq3v_
+      <br>
+      Reddit：DukeeI5
+      <br>
+      Email：auaup@proton.me
+      <br>
+      Telegram：dq3vzz
+      <br>
+      personal profile・自己紹介：
+      <br>
+      https://guns.lol/auau_xq4ch_
+      <br>
+      <br>
+      dq3v (K0nohaQ)
+      <br>
+      <br>
+      Tor、Proton、Vape V4、LiquidBounce、Solstice(仮)、
+      <br>
+      user
+      <br>
+      Rise or Packet購入予定
+      <br>
+      <br>
+      できること：
+      <br>
+      logger, trojan(トロイの木馬)等の制作
+      <br>
+      ハックのConfig制作
+      <br>
+      Python
+      <br>
+      Lua
+      <br>
+      MMD
+      <br>
+      4D Skin (Minecraft)
+      <br>
+      JavaでMod（チート）制作(Minecraft)
+      <br>
+      HTML
+      <br>
+    </div>
+    <div id="video-container" class="flex-col"></div>
+  </div>
+  <script>
+    function main() {
+      fetch("./video_list")
+        .then(res => res.text())
+        .then(text => {
+          Array.from(text.replaceAll("\r", "").split("\n"))
+            .forEach(p => {
+              const vc = document.getElementById("video-container")
+
+              const videoView = document.createElement("div")
+              videoView.classList.add("flex-col")
+              videoView.classList.add("video-view")
+              const title = document.createElement("p")
+              title.innerText = p
+              const video = document.createElement("video")
+              video.src = `./videos/${encodeURIComponent(p)}`
+              video.controls = true
+              videoView.appendChild(title)
+              videoView.appendChild(video)
+              
+              vc.appendChild(videoView)
+            })
+        })
+        .catch(e => console.error(e))
+    }
+    main()
+  </script>
+</body>
+</html>

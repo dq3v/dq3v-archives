@@ -1,0 +1,25 @@
+body {
+  font-size: large;
+  background-color: #000000;
+  color: #ffffff;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  text-align: center;
+}
+
+.video-view {
+  background-color: gray;
+  width: 60vw;
+  padding: 0.5rem;
+}
+
+video {
+  width: 60vw;
+}
