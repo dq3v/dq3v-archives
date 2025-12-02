@@ -16,10 +16,35 @@ body {
 
 .video-view {
   background-color: gray;
-  width: 60vw;
   padding: 0.5rem;
+  justify-content: space-between;
 }
 
-video {
-  width: 60vw;
+.video-view video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+#video-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  #video-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  #video-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  #video-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
