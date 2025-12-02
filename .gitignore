@@ -1,0 +1,6 @@
+video_scraper.go
+go.mod
+go.sum
+.idea/*
+yt-dlp.exe
+video_scraper.exe

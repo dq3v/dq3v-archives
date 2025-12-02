@@ -75,20 +75,21 @@
   </div>
   <script>
     function main() {
-      fetch("./video_list")
+      fetch("./video_list.json")
         .then(res => res.text())
         .then(text => {
-          Array.from(text.replaceAll("\r", "").split("\n"))
-            .forEach(p => {
+          JSON.parse(text)
+            .filter(pair => pair.id !== null && pair.title !== null)
+            .forEach(pair => {
               const vc = document.getElementById("video-container")
 
               const videoView = document.createElement("div")
               videoView.classList.add("flex-col")
               videoView.classList.add("video-view")
               const title = document.createElement("p")
-              title.innerText = p
+              title.innerText = pair.title
               const video = document.createElement("video")
-              video.src = `https://github.com/dq3v/dq3v-archives/raw/refs/heads/main/videos/${encodeURIComponent(p)}`
+              video.src = `https://github.com/dq3v/dq3v-archives/raw/refs/heads/main/videos/${pair.id}.mp4`
               video.controls = true
               videoView.appendChild(title)
               videoView.appendChild(video)
